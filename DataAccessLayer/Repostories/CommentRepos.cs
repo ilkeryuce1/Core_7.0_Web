@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repostories
 {
-    public class CommentRepos : IGenericDal<Comment>
+    public class CommentRepos : IGenericDal<Comment>//
     {
         public void Delete(Comment t)
         {
