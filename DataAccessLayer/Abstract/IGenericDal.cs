@@ -8,6 +8,7 @@ namespace DataAccessLayer.Abstract
 {
     public interface IGenericDal<T> where T : class
     {
+        //metot tanımlamayı kolaylastırır
         void Insert(T t);
         void Delete(T t);
         void Update (T t);
