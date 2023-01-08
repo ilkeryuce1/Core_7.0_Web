@@ -19,10 +19,20 @@ namespace DataAccessLayer.Repostories
             c.SaveChanges();
         }
 
+        public void Delete(Category t)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteCategory(Category category)
         {
             c.Remove(category);
             c.SaveChanges();
+        }
+
+        public List<Category> GetAll()
+        {
+            throw new NotImplementedException();
         }
 
         public Category GetById(int id)
@@ -31,9 +41,19 @@ namespace DataAccessLayer.Repostories
             return c.Categorys.Find(id);
                 }
 
+        public void Insert(Category t)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Category> ListAllCategory()
         {
           return  c.Categorys.ToList();
+        }
+
+        public void Update(Category t)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateCategory(Category category)

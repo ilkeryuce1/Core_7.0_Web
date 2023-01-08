@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Concrete.EntityFramework
+namespace DataAccessLayer.EntityFramework
 {
     public class EfCategoryRepos : GenericRepos<Category>, ICategoryDal
     //Icateory dal ıcındekı ve genericrepos ıcındekı metotları da alacaktır 

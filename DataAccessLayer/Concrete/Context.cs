@@ -16,6 +16,9 @@ namespace DataAccessLayer.Concrete
         {
             optionsBuilder.UseSqlServer("server=DESKTOP-QJ144O6\\SQLEXPRESS; database=CoreBlogDb; integrated security=true;TrustServerCertificate=True");
         }
+
+      
+
         //Yukarıdakı sınıfa aıt tabloları burada tanımlamıs olduk 
         public DbSet<About> Abouts { get; set; }
         public DbSet<Blog> Blogs { get; set; }
