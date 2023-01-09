@@ -26,15 +26,24 @@ namespace BusinessLayer.Concrete
 
 		public List<Blog> GetAllBlog()
 		{
-			return _blogDal.GetAll();		
+			return _blogDal.GetListAll();		
 		}
 
 		public Blog GetById(int id)
 		{
 			throw new NotImplementedException();
 		}
+		public List<Blog> GetBlogByID(int id)
+		{
+			return _blogDal.GetListAll(x=>x.BlogID==id);
+		}
 
-		public void RemoveCategory(Blog blog)
+        public List<Blog> GetListWithCategory()
+        {
+			return _blogDal.GetListWithCategory();//Blog kontrollere tekrar geçiyoruz
+		}
+
+        public void RemoveCategory(Blog blog)
 		{
 			throw new NotImplementedException();
 		}

@@ -10,8 +10,13 @@ namespace Blog.Controllers
         BlogManager bm = new BlogManager(new EfBlogRepos());
         public IActionResult Index()
         {
-            var values = bm.GetAllBlog();
+            var values = bm.GetListWithCategory();
             return View(values);
+        }
+        public IActionResult  BlogReadAll(int id)
+        {
+            var values = bm.GetBlogByID(id);
+            return View (values);
         }
     }
 }

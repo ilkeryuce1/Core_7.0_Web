@@ -15,7 +15,9 @@ namespace DataAccessLayer.Abstract
         //void UpdateBlog (Blog blog);
         //Blog GetBlogId(int id);
 
-        //Bunların yerine 
+        //Bunların yerine  IgernericDal kullandık
+
+        List<Blog> GetListWithCategory();//Bloklara ozel oldukları ıcın burada tanımladık generic yapıya ek olarak metot tanımlama ıcın burayı kullandık 
 
 
 
