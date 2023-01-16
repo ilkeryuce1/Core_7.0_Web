@@ -1,7 +1,10 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Blog.Controllers
 {
@@ -17,10 +20,26 @@ namespace Blog.Controllers
 		[HttpPost]
 		public IActionResult Index(Writer writer)
 		{
-			writer.WriterStatus = true;
-			writer.WriterAbout = "Test";
-			vm.WriterAdd(writer);
-			return RedirectToAction("Index","Blog");
+			WriterValidator vr = new WriterValidator();
+			ValidationResult result = vr.Validate(writer);
+			
+			if (ModelState.IsValid)
+			{
+                writer.WriterStatus = true;
+                writer.WriterAbout = "Test";
+                vm.WriterAdd(writer);
+                return RedirectToAction("Index", "Blog");
+            }
+			else
+			{
+				foreach (var item in result.Errors)
+				{
+					ModelState.AddModelError(item.PropertyName,item.ErrorMessage);
+				}
+			}
+			return View();
+			//ModelError geçip model tanımlıyoryuz 
+		
 		}
 	
 	}

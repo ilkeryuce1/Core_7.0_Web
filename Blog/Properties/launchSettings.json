@@ -21,7 +21,9 @@
       "sqlDebugging": true
     },
     "IIS Express": {
-      "commandName": "IISExpress"
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "sqlDebugging": true
     },
     "WSL": {
       "commandName": "WSL2",
