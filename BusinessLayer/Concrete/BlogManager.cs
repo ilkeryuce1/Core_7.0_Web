@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,24 +27,24 @@ namespace BusinessLayer.Concrete
 
 		public List<Blog> GetAllBlog()
 		{
-			return _blogDal.GetListAll();		
+			return _blogDal.GetListAll();
 		}
 
 		public Blog GetById(int id)
 		{
-			throw new NotImplementedException();
+			return _blogDal.GetById(id);
 		}
 		public List<Blog> GetBlogByID(int id)
 		{
-			return _blogDal.GetListAll(x=>x.BlogID==id);
+			return _blogDal.GetListAll(x => x.BlogID == id);
 		}
 
-        public List<Blog> GetListWithCategory()
-        {
+		public List<Blog> GetListWithCategory()
+		{
 			return _blogDal.GetListWithCategory();//Blog kontrollere tekrar geçiyoruz
 		}
 
-        public void RemoveCategory(Blog blog)
+		public void RemoveCategory(Blog blog)
 		{
 			throw new NotImplementedException();
 		}
@@ -51,6 +52,11 @@ namespace BusinessLayer.Concrete
 		public void UpdateCategory(Blog blog)
 		{
 			throw new NotImplementedException();
+		}
+
+		public List<Blog> GetBlogListWriter(int id)
+		{
+			return _blogDal.GetListAll(x=>x.WriterID==id);
 		}
 	}
 }

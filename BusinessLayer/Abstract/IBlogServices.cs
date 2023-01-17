@@ -16,6 +16,6 @@ namespace BusinessLayer.Abstract
 		Blog GetById(int id);
 		List<Blog> GetListWithCategory();//EfBlogReposdaki Metpodu burada cagırdık ve Blog managerden implemente ettik gerekli kodları ıcersııne yazdık
 
-		
+		List<Blog> GetBlogListWriter(int id);
 	}
 }
