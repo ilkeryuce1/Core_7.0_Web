@@ -55,8 +55,8 @@ namespace BusinessLayer.Concrete
 		}
 
 		public List<Blog> GetBlogListWriter(int id)
-		{
-			return _blogDal.GetListAll(x=>x.WriterID==id);
+		{//yazarın yazdıgı son yazıları burada listeledik
+			return _blogDal.GetListAll(x=>x.WriterID==id).OrderByDescending(x=>x.BlogID).ToList();
 		}
 	}
 }
