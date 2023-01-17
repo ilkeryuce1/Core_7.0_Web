@@ -13,6 +13,10 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1","?code={0}");
+//Code controller tarafýnda da ayný olmalý 
+
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
