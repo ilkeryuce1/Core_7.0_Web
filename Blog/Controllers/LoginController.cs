@@ -7,17 +7,16 @@ using System.Security.Claims;
 
 namespace Blog.Controllers
 {
+	[AllowAnonymous]
 
 	public class LoginController : Controller
 	{
 		[HttpGet]
-		[AllowAnonymous]
 		public IActionResult Index()
 		{
 			return View();
 		}
 		[HttpPost]
-		[AllowAnonymous]
 		public async Task<IActionResult> Index(Writer w)
 		{
 			Context c = new Context();

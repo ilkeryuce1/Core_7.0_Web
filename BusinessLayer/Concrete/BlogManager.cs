@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 			_blogDal = blogDal;
 		}
 
-		public void AddCategory(Blog blog)
+		public void AddBlog(Blog blog)
 		{
 			throw new NotImplementedException();
 		}
@@ -28,6 +28,11 @@ namespace BusinessLayer.Concrete
 		public List<Blog> GetAllBlog()
 		{
 			return _blogDal.GetListAll();
+		}
+
+		public List<Blog> GetLast3Blog()
+		{
+			return _blogDal.GetListAll().OrderByDescending(x=>x.BlogID).Take(3).ToList();
 		}
 
 		public Blog GetById(int id)
@@ -44,14 +49,14 @@ namespace BusinessLayer.Concrete
 			return _blogDal.GetListWithCategory();//Blog kontrollere tekrar geçiyoruz
 		}
 
-		public void RemoveCategory(Blog blog)
+		public void RemoveBlog(Blog blog)
 		{
-			throw new NotImplementedException();
+			_blogDal.Delete(blog);
 		}
 
-		public void UpdateCategory(Blog blog)
+		public void UpdateBlog(Blog blog)
 		{
-			throw new NotImplementedException();
+			_blogDal.Update(blog);
 		}
 
 		public List<Blog> GetBlogListWriter(int id)

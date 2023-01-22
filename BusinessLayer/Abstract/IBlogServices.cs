@@ -9,9 +9,9 @@ namespace BusinessLayer.Abstract
 {
 	public interface IBlogServices
 	{
-		void AddCategory(Blog blog);
-		void RemoveCategory(Blog blog);
-		void UpdateCategory(Blog blog);
+		void AddBlog(Blog blog);
+		void RemoveBlog(Blog blog);
+		void UpdateBlog(Blog blog);
 		List<Blog> GetAllBlog();
 		Blog GetById(int id);
 		List<Blog> GetListWithCategory();//EfBlogReposdaki Metpodu burada cagırdık ve Blog managerden implemente ettik gerekli kodları ıcersııne yazdık
