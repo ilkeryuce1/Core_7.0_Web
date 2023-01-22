@@ -3,13 +3,16 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Blog.Controllers
 {
-	public class RegisterController : Controller
+    [AllowAnonymous]
+    public class RegisterController : Controller
 	{
+		
 		WriterManager vm = new WriterManager(new EfWriterRepos());
 		public IActionResult Index()
 		{
