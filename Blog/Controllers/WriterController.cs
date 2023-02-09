@@ -3,12 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.Controllers
 {
-
+	[AllowAnonymous]
     public class WriterController : Controller
 	{
-		[AllowAnonymous]
-	
-		public IActionResult Index()
+
+      
+
+        public IActionResult Index()
 		{
 			return View();
 		}
